@@ -86,6 +86,12 @@
       display: block;
     }
 
+    .search-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
     .search-box {
       display: flex;
       align-items: center;
@@ -128,6 +134,12 @@
       box-shadow: 0 0 18px rgba(47, 231, 255, 0.8);
     }
 
+    .search-hint {
+      font-size: 0.95rem;
+      color: rgba(219, 233, 255, 0.65);
+      text-align: left;
+    }
+
     .gcse-search {
       margin-top: 28px;
       text-align: left;
@@ -158,10 +170,19 @@
 
     <section class="search-card">
       <span class="search-label">Aba de pesquisa gigante</span>
-      <div class="search-box">
-        <input type="text" placeholder="Digite sua pesquisa..." aria-label="Pesquisar no NeoSearch">
-        <button class="search-button" type="button">Buscar</button>
-      </div>
+      <form class="search-form" action="https://www.google.com/search" method="get">
+        <div class="search-box">
+          <input
+            type="text"
+            name="q"
+            placeholder="Digite sua pesquisa..."
+            aria-label="Pesquisar no NeoSearch"
+            required
+          >
+          <button class="search-button" type="submit">Buscar</button>
+        </div>
+        <span class="search-hint">Pressione Enter para pesquisar ou use o botão.</span>
+      </form>
       <div class="gcse-search"></div>
     </section>
 
