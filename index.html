@@ -34,7 +34,7 @@
     }
 
     .wrapper {
-      width: min(960px, 100%);
+      width: min(1040px, 100%);
       text-align: center;
     }
 
@@ -55,10 +55,25 @@
 
     .search-card {
       background: linear-gradient(160deg, rgba(18, 27, 68, 0.95), rgba(8, 14, 36, 0.95));
-      border-radius: 28px;
-      padding: 32px;
-      box-shadow: 0 0 30px rgba(17, 82, 255, 0.3), 0 0 60px rgba(47, 231, 255, 0.2);
-      border: 1px solid rgba(47, 231, 255, 0.35);
+      border-radius: 32px;
+      padding: 44px;
+      box-shadow: 0 0 30px rgba(17, 82, 255, 0.3), 0 0 70px rgba(47, 231, 255, 0.25);
+      border: 1px solid rgba(47, 231, 255, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .search-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(47, 231, 255, 0.8), transparent);
+      box-shadow: 0 0 18px rgba(47, 231, 255, 0.8);
     }
 
     .search-label {
@@ -76,10 +91,10 @@
       align-items: center;
       gap: 16px;
       background: rgba(7, 12, 32, 0.8);
-      border-radius: 20px;
-      padding: 18px 22px;
-      border: 1px solid rgba(47, 231, 255, 0.5);
-      box-shadow: 0 0 18px rgba(47, 231, 255, 0.35);
+      border-radius: 24px;
+      padding: 22px 26px;
+      border: 2px solid rgba(47, 231, 255, 0.65);
+      box-shadow: 0 0 22px rgba(47, 231, 255, 0.4);
     }
 
     .search-box input {
@@ -87,9 +102,13 @@
       background: transparent;
       border: none;
       color: var(--text);
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       outline: none;
       font-family: "Inter", sans-serif;
+    }
+
+    .search-box input::placeholder {
+      color: rgba(219, 233, 255, 0.55);
     }
 
     .search-button {
@@ -97,8 +116,8 @@
       color: #07101f;
       border: none;
       font-weight: 600;
-      padding: 12px 22px;
-      border-radius: 14px;
+      padding: 14px 26px;
+      border-radius: 16px;
       cursor: pointer;
       box-shadow: 0 0 12px var(--neon);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -110,12 +129,12 @@
     }
 
     .gcse-search {
-      margin-top: 24px;
+      margin-top: 28px;
       text-align: left;
     }
 
     .footer-note {
-      margin-top: 28px;
+      margin-top: 30px;
       font-size: 0.9rem;
       color: rgba(219, 233, 255, 0.6);
     }
@@ -138,7 +157,7 @@
     <p class="subtitle">Pesquisa com brilho neon e foco total.</p>
 
     <section class="search-card">
-      <span class="search-label">Sua busca</span>
+      <span class="search-label">Aba de pesquisa gigante</span>
       <div class="search-box">
         <input type="text" placeholder="Digite sua pesquisa..." aria-label="Pesquisar no NeoSearch">
         <button class="search-button" type="button">Buscar</button>
