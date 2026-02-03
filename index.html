@@ -1,26 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeoSearch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: black;
-      color: lime;
-      text-align: center;
-      font-family: monospace;
-      padding-top: 50px;
+    :root {
+      --bg: #0b1230;
+      --bg-2: #0f1a44;
+      --neon: #2fe7ff;
+      --neon-soft: rgba(47, 231, 255, 0.35);
+      --text: #dbe9ff;
     }
-    img {
-      width: 200px;
-      border: 2px solid lime;
-      margin-top: 20px;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #18265f, var(--bg));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    .wrapper {
+      width: min(960px, 100%);
+      text-align: center;
+    }
+
+    .title {
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      letter-spacing: 4px;
+      color: var(--neon);
+      text-shadow: 0 0 12px var(--neon-soft), 0 0 36px rgba(47, 231, 255, 0.6);
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: rgba(219, 233, 255, 0.8);
+      margin-bottom: 40px;
+    }
+
+    .search-card {
+      background: linear-gradient(160deg, rgba(18, 27, 68, 0.95), rgba(8, 14, 36, 0.95));
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 0 30px rgba(17, 82, 255, 0.3), 0 0 60px rgba(47, 231, 255, 0.2);
+      border: 1px solid rgba(47, 231, 255, 0.35);
+    }
+
+    .search-label {
+      font-family: "Orbitron", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      color: rgba(47, 231, 255, 0.8);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(7, 12, 32, 0.8);
+      border-radius: 20px;
+      padding: 18px 22px;
+      border: 1px solid rgba(47, 231, 255, 0.5);
+      box-shadow: 0 0 18px rgba(47, 231, 255, 0.35);
+    }
+
+    .search-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-size: 1.1rem;
+      outline: none;
+      font-family: "Inter", sans-serif;
+    }
+
+    .search-button {
+      background: var(--neon);
+      color: #07101f;
+      border: none;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 0 12px var(--neon);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .search-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 18px rgba(47, 231, 255, 0.8);
+    }
+
+    .gcse-search {
+      margin-top: 24px;
+      text-align: left;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      font-size: 0.9rem;
+      color: rgba(219, 233, 255, 0.6);
+    }
+
+    @media (max-width: 700px) {
+      .search-box {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>App HTML funcionando!</h1>
-  <p>Este app foi carregado dentro de um APK Android.</p>
-  <img src="foto.png" alt="Imagem do app">
+  <main class="wrapper">
+    <h1 class="title">NeoSearch</h1>
+    <p class="subtitle">Pesquisa com brilho neon e foco total.</p>
+
+    <section class="search-card">
+      <span class="search-label">Sua busca</span>
+      <div class="search-box">
+        <input type="text" placeholder="Digite sua pesquisa..." aria-label="Pesquisar no NeoSearch">
+        <button class="search-button" type="button">Buscar</button>
+      </div>
+      <div class="gcse-search"></div>
+    </section>
+
+    <p class="footer-note">Powered by NeoSearch UI</p>
+  </main>
+
+  <script async src="https://cse.google.com/cse.js?cx=628902124010d4482"></script>
 </body>
 </html>
